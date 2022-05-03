@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : lun. 11 avr. 2022 à 12:56
+-- Généré le : mar. 03 mai 2022 à 15:04
 -- Version du serveur : 10.4.22-MariaDB
 -- Version de PHP : 8.0.13
 
@@ -33,6 +33,17 @@ CREATE TABLE `cme_activite` (
   `date_debut` date NOT NULL,
   `date_fin` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Déchargement des données de la table `cme_activite`
+--
+
+INSERT INTO `cme_activite` (`id_activite`, `type`, `date_debut`, `date_fin`) VALUES
+(7, 'Cantine', '2007-01-07', '0000-00-00'),
+(8, 'Gargote', '2007-07-01', '0000-00-00'),
+(9, 'Pépinière', '2005-01-01', '0000-00-00'),
+(10, 'Visite médicale', '2005-01-01', '0000-00-00'),
+(11, 'Clube ado', '2005-01-01', '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -128,6 +139,24 @@ CREATE TABLE `cme_ecole` (
   `nom_ecole` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Déchargement des données de la table `cme_ecole`
+--
+
+INSERT INTO `cme_ecole` (`id_ecole`, `nom_ecole`) VALUES
+(8, 'CEG 67Ha'),
+(9, 'Privé Fanavotana'),
+(10, 'Ottyno'),
+(11, 'Notre Dame de Rosaire'),
+(12, 'Lycée techinque Mahamasina'),
+(13, 'Charlemagne'),
+(14, 'Saint Augustin Tsaramasay'),
+(15, 'Lycée Professionnel Ampefiloha'),
+(16, 'EPP Ankazomanga'),
+(17, 'Zoara Fitahiana'),
+(18, 'IESTIME'),
+(19, 'EPP Antanimena I');
+
 -- --------------------------------------------------------
 
 --
@@ -149,6 +178,37 @@ CREATE TABLE `cme_enfant` (
   `scolarise` int(11) DEFAULT 0,
   `photo` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Déchargement des données de la table `cme_enfant`
+--
+
+INSERT INTO `cme_enfant` (`id_enfant`, `id_mere`, `num_matricule`, `nom`, `prenom`, `date_naissance`, `sexe`, `flDonneesPersonnellesValides`, `id_etat`, `id_activite`, `enregistre`, `scolarise`, `photo`) VALUES
+(18, 3, '163', 'NOMENJANAHARY', 'Fitia', '2008-09-19', 'F', 0, 1, 7, 0, 1, ''),
+(19, 4, '3', 'RATAHINJANAHARY', 'Stella', '2005-09-24', 'H', 0, 1, 11, 0, 1, ''),
+(20, 4, '4', 'RANDRIANANDRASANA ', 'Solohery ', '2003-06-16', 'H', 0, 1, 7, 0, 1, ''),
+(21, 5, '393', 'RANDRIATSILAVINA', 'Jerry Scott', '2007-03-28', 'H', 0, 1, 11, 0, 1, ''),
+(22, 6, '171', 'RAINIZANAJATOVO ', 'Fitia Marie Charlotte', '2011-11-29', 'F', 0, 2, 7, 0, 1, ''),
+(23, 7, '275', 'CHRISTOPHINE', 'Faniriantsoa', '2011-05-28', 'H', 0, 1, 9, 0, 1, ''),
+(24, 7, '389', 'ANDRIANANTENAINA', 'Fitahiana Tiavina', '2008-05-10', 'H', 0, 1, 7, 0, 1, ''),
+(25, 8, '175', 'JEAN WILLIAM', 'Fetraniaina', '2009-07-01', 'H', 0, 1, 7, 0, 1, ''),
+(26, 9, '176', 'RANDRIANARIVO                 ', 'Ronaldino ', '2010-02-06', 'H', 0, 1, 7, 0, 1, ''),
+(27, 10, '281', 'RAJAOBELINA', 'Mamisoa Marie', '2011-01-19', 'F', 0, 1, 7, 0, 1, ''),
+(28, 10, '446', 'RANDRIARIMANGA', 'Antonio', '2008-02-03', 'H', 0, 1, 7, 0, 1, ''),
+(29, 11, '183', 'FETRANIAINA', 'Andry ', '2008-07-12', 'H', 0, 1, 11, 0, 1, ''),
+(30, 3, '543', 'NOMENJANAHARY', 'Niriko Arela/ZAFIKELY', '2014-05-13', 'H', 0, 2, 7, 0, 1, ''),
+(31, 6, '43', 'RANDRIANJATOVO', 'Fetra Nirinasoa', '2003-11-11', 'H', 1, 1, 11, 0, 1, ''),
+(42, 11, '86', 'RAMINOARISOA', 'Ravakiniaina', '2005-11-26', 'F', 1, 3, 7, 0, 1, ''),
+(43, 12, '675', 'NOMENJANAHARY', 'Fenosoa Nantenaina', '2012-10-18', 'H', 0, 1, 7, 0, 1, ''),
+(44, 13, '186', 'RANIVOARISOA', 'Tiavina Priscie', '2009-08-31', 'F', 0, 3, 7, 0, 1, ''),
+(45, 13, '586', 'RAKOTONDRABE', 'Fanomezantsoa Jean Eric', '2011-07-16', 'F', 0, 1, 7, 0, 1, ''),
+(46, 14, '447', 'RAZAFINDRAMANGA', 'Miora Elisabeth', '2005-07-25', 'F', 0, 1, 7, 0, 1, ''),
+(47, 15, '16', 'RASOAMANAMBELO', 'Hanitsoa Rinah', '2005-09-23', 'F', 0, 1, 7, 0, 1, ''),
+(48, 15, '17', 'RASOANANTENAINA', 'Annie Angeline', '2002-11-13', 'F', 0, 2, 7, 0, 1, ''),
+(49, 16, '54', 'RAKOTOMAMONJY', 'Fréderic', '2006-02-18', 'H', 0, 1, 7, 0, 1, ''),
+(50, 16, '55', 'FANJANIRINA', 'Patricia', '2003-10-20', 'F', 0, 1, 7, 0, 1, ''),
+(51, 17, '50', 'RAZAFINANDRASANA', 'Haingo Fitiavana Sonya', '2006-09-15', 'F', 0, 1, 7, 0, 1, ''),
+(52, 17, '409', 'RAKOTONIRINA', 'Tolotriniaina Manampy Finoana', '2014-02-03', 'H', 0, 2, 7, 0, 1, '');
 
 -- --------------------------------------------------------
 
@@ -185,6 +245,37 @@ CREATE TABLE `cme_historique_enfant` (
   `date_debut` date NOT NULL,
   `date_fin` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Déchargement des données de la table `cme_historique_enfant`
+--
+
+INSERT INTO `cme_historique_enfant` (`id_histo`, `id_enfant`, `id_mere`, `nb_statu_miseAjour`, `observation`, `date_debut`, `date_fin`) VALUES
+(20, 18, 3, 0, '', '2022-04-13', NULL),
+(21, 19, 4, 0, '', '2022-04-13', NULL),
+(22, 20, 4, 0, '', '2022-04-13', NULL),
+(23, 21, 5, 0, '', '2022-04-13', NULL),
+(24, 22, 6, 0, '', '2022-04-13', NULL),
+(25, 23, 7, 0, '', '2022-04-13', NULL),
+(26, 24, 7, 0, '', '2022-04-13', NULL),
+(27, 25, 8, 0, '', '2022-04-13', NULL),
+(28, 26, 9, 0, '', '2022-04-13', NULL),
+(29, 27, 10, 0, '', '2022-04-13', NULL),
+(30, 28, 10, 0, '', '2022-04-13', NULL),
+(31, 29, 11, 0, '', '2022-04-13', NULL),
+(32, 30, 3, 0, '', '2022-04-26', NULL),
+(33, 31, 6, 0, '', '2022-04-26', NULL),
+(34, 42, 11, 0, '', '2022-04-26', NULL),
+(35, 43, 12, 0, '', '2022-04-26', NULL),
+(36, 44, 13, 0, '', '2022-04-26', NULL),
+(37, 45, 13, 0, '', '2022-04-26', NULL),
+(38, 46, 14, 0, '', '2022-04-26', NULL),
+(39, 47, 15, 0, '', '2022-04-26', NULL),
+(40, 48, 15, 0, '', '2022-04-26', NULL),
+(41, 49, 16, 0, '', '2022-04-26', NULL),
+(42, 50, 16, 0, '', '2022-04-26', NULL),
+(43, 51, 17, 0, '', '2022-04-26', NULL),
+(44, 52, 17, 0, '', '2022-04-26', NULL);
 
 -- --------------------------------------------------------
 
@@ -346,8 +437,34 @@ CREATE TABLE `cme_sad` (
   `date_adhesion` date DEFAULT NULL,
   `frequence_de_payement` varchar(50) DEFAULT NULL,
   `date_recu_payement` date DEFAULT NULL,
+  `num_liste` int(11) NOT NULL,
   `observation` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Déchargement des données de la table `cme_sad`
+--
+
+INSERT INTO `cme_sad` (`id_sad`, `id_enfant`, `id_mere`, `num_matricule`, `id_donateur`, `adopt_progressive`, `date_debut`, `date_fin`, `date_envoye_en_Italie`, `date_adhesion`, `frequence_de_payement`, `date_recu_payement`, `num_liste`, `observation`) VALUES
+(6, 18, 3, '035', NULL, NULL, '2016-02-02', '0000-00-00', '2016-01-30', '2016-02-02', 'année', '2016-02-11', 5, ''),
+(7, 19, 4, '002', NULL, NULL, '2013-09-10', '0000-00-00', '2013-08-01', '2013-09-10', 'année', '2013-10-25', 1, 'Soeur du SAD 01/012'),
+(8, 20, 4, '012', NULL, NULL, '2014-01-09', '0000-00-00', '2013-08-01', '2014-01-09', 'année', '2014-09-04', 1, 'Frère du SAD 01-002'),
+(9, 21, 5, '021', NULL, NULL, '2015-02-26', '0000-00-00', '2014-12-10', '2015-02-26', 'semestre', '2015-03-17', 2, ''),
+(10, 31, 6, '010', NULL, NULL, '2014-06-08', '0000-00-00', '2013-08-01', '2014-06-08', 'mois', '2014-06-25', 1, ''),
+(11, 23, 7, '053', NULL, NULL, '2018-01-11', '0000-00-00', '2018-01-20', '2018-01-11', 'mois', '2018-02-15', 5, 'soeur du SAD 02/018'),
+(12, 24, 7, '018', NULL, NULL, '2014-12-15', '0000-00-00', '2014-12-10', '2014-12-15', 'mois', '2015-02-02', 2, 'Frère du SAD 05/053'),
+(13, 25, 8, '072', NULL, NULL, '2019-02-19', '0000-00-00', '2018-05-25', '2019-02-19', 'année', '2019-03-06', 6, ''),
+(14, 26, 9, '081', NULL, NULL, '2021-01-25', '0000-00-00', '2019-07-19', '2021-01-25', 'mois', '2021-02-02', 7, ''),
+(15, 27, 10, '060', NULL, NULL, '2017-12-15', '0000-00-00', '2018-01-29', '2017-12-15', 'trimestre', '2018-02-21', 5, 'Soeur du SAD 03/037'),
+(16, 28, 10, '037', NULL, NULL, '2016-04-11', '0000-00-00', '2016-01-30', '2016-04-11', 'année', '2016-04-28', 3, 'frère du SAD 05/060'),
+(17, 29, 11, '054', NULL, NULL, '2017-12-27', '0000-00-00', '2018-01-29', '2017-12-27', 'année', '2018-02-20', 5, ''),
+(18, 43, 12, '079', NULL, NULL, '2020-09-01', '0000-00-00', '2019-07-19', '2020-09-01', 'année', '0000-00-00', 7, ''),
+(19, 45, 13, '078', NULL, NULL, '2019-11-26', '0000-00-00', '2019-07-19', '2019-11-26', 'mois', '2019-12-02', 7, ''),
+(20, 46, 14, '062', NULL, NULL, '2018-03-05', '0000-00-00', '2018-01-29', '2018-03-05', 'semestre', '2018-04-17', 5, ''),
+(21, 47, 15, '015', NULL, NULL, '2014-11-21', '0000-00-00', '2013-08-01', '2014-11-21', 'mois', '2014-12-03', 1, ''),
+(22, 49, 16, '003', NULL, NULL, '2013-11-06', '0000-00-00', '2013-08-01', '2013-11-06', 'semestre', '2013-12-17', 1, 'Frère du SAD 01/008'),
+(23, 50, 16, '008', NULL, NULL, '2014-03-01', '0000-00-00', '2013-08-01', '2014-03-01', 'mois', '2014-03-04', 1, 'Soeur du SAD 01/003'),
+(24, 51, 17, '09', NULL, NULL, '2014-05-16', '0000-00-00', '2013-08-01', '2014-05-16', 'semestre', '2014-05-19', 1, 'Septembre 2021 - La fille a demenagèe avec le pere dans une autre ville');
 
 -- --------------------------------------------------------
 
@@ -506,6 +623,7 @@ CREATE TABLE `v_cme_sad` (
 ,`date_envoye_en_Italie` date
 ,`date_adhesion` date
 ,`frequence_de_payement` varchar(50)
+,`num_liste` int(11)
 ,`observation` varchar(100)
 ,`adopt_progressive` int(11)
 );
@@ -609,7 +727,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `v_cme_sad`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_cme_sad`  AS SELECT `enf`.`id_enfant` AS `id_enfant`, `enf`.`num_matricule` AS `num_matricule_enf`, `enf`.`nom` AS `nom`, `enf`.`prenom` AS `prenom`, `enf`.`sexe` AS `sexe`, `enf`.`date_naissance` AS `date_naissance`, `enf`.`id_etat` AS `id_etat`, `sad`.`id_sad` AS `id_sad`, `sad`.`num_matricule` AS `num_matricule_sad`, `sad`.`date_envoye_en_Italie` AS `date_envoye_en_Italie`, `sad`.`date_adhesion` AS `date_adhesion`, `sad`.`frequence_de_payement` AS `frequence_de_payement`, `sad`.`observation` AS `observation`, `sad`.`adopt_progressive` AS `adopt_progressive` FROM (`cme_sad` `sad` join `cme_enfant` `enf` on(`enf`.`id_enfant` = `sad`.`id_enfant` and `enf`.`id_mere` = `sad`.`id_mere`)) ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_cme_sad`  AS SELECT `enf`.`id_enfant` AS `id_enfant`, `enf`.`num_matricule` AS `num_matricule_enf`, `enf`.`nom` AS `nom`, `enf`.`prenom` AS `prenom`, `enf`.`sexe` AS `sexe`, `enf`.`date_naissance` AS `date_naissance`, `enf`.`id_etat` AS `id_etat`, `sad`.`id_sad` AS `id_sad`, `sad`.`num_matricule` AS `num_matricule_sad`, `sad`.`date_envoye_en_Italie` AS `date_envoye_en_Italie`, `sad`.`date_adhesion` AS `date_adhesion`, `sad`.`frequence_de_payement` AS `frequence_de_payement`, `sad`.`num_liste` AS `num_liste`, `sad`.`observation` AS `observation`, `sad`.`adopt_progressive` AS `adopt_progressive` FROM (`cme_sad` `sad` join `cme_enfant` `enf` on(`enf`.`id_enfant` = `sad`.`id_enfant` and `enf`.`id_mere` = `sad`.`id_mere`)) ;
 
 -- --------------------------------------------------------
 
@@ -779,7 +897,7 @@ ALTER TABLE `cme_unite`
 -- AUTO_INCREMENT pour la table `cme_activite`
 --
 ALTER TABLE `cme_activite`
-  MODIFY `id_activite` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_activite` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT pour la table `cme_administrateur`
@@ -803,13 +921,13 @@ ALTER TABLE `cme_classe`
 -- AUTO_INCREMENT pour la table `cme_ecole`
 --
 ALTER TABLE `cme_ecole`
-  MODIFY `id_ecole` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_ecole` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT pour la table `cme_enfant`
 --
 ALTER TABLE `cme_enfant`
-  MODIFY `id_enfant` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id_enfant` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 
 --
 -- AUTO_INCREMENT pour la table `cme_etat`
@@ -821,7 +939,7 @@ ALTER TABLE `cme_etat`
 -- AUTO_INCREMENT pour la table `cme_historique_enfant`
 --
 ALTER TABLE `cme_historique_enfant`
-  MODIFY `id_histo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id_histo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- AUTO_INCREMENT pour la table `cme_mere`
@@ -857,7 +975,7 @@ ALTER TABLE `cme_pointage_admin`
 -- AUTO_INCREMENT pour la table `cme_sad`
 --
 ALTER TABLE `cme_sad`
-  MODIFY `id_sad` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_sad` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT pour la table `cme_scolarisation`
